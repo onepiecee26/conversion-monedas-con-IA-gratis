@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +13,9 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <!-- ✅ GOOGLE ADSENSE - CÓDIGO CORRECTO CON TU ID -->
+    <!-- ✅ GOOGLE ADSENSE - ÚNICA LÍNEA CORRECTA -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1913399723778376" crossorigin="anonymous"></script>
     
-    <!-- Estilos personalizados -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -23,149 +24,14 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-        }
-        .card-header {
-            font-size: 28px;
-            font-weight: 700;
-            color: #4a5568;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #2d3748;
-        }
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 14px 30px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: transform 0.2s;
-        }
-        button:hover {
-            transform: translateY(-2px);
-        }
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f7fafc;
-            border-radius: 10px;
-            display: none;
-        }
-        .result.show {
-            display: block;
-        }
+        /* Aquí van tus estilos... */
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                💱 Conversor de Divisas Inteligente
-            </div>
-            <div class="card-body">
-                <form id="converterForm">
-                    <div class="form-group">
-                        <label for="amount">Cantidad:</label>
-                        <input type="number" id="amount" class="form-control" placeholder="Ingresa la cantidad" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="fromCurrency">De:</label>
-                        <select id="fromCurrency" class="form-control">
-                            <option value="USD">USD - Dólar Estadounidense</option>
-                            <option value="EUR">EUR - Euro</option>
-                            <option value="GBP">GBP - Libra Esterlina</option>
-                            <option value="JPY">JPY - Yen Japonés</option>
-                            <option value="MXN">MXN - Peso Mexicano</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="toCurrency">A:</label>
-                        <select id="toCurrency" class="form-control">
-                            <option value="EUR">EUR - Euro</option>
-                            <option value="USD">USD - Dólar Estadounidense</option>
-                            <option value="GBP">GBP - Libra Esterlina</option>
-                            <option value="JPY">JPY - Yen Japonés</option>
-                            <option value="MXN">MXN - Peso Mexicano</option>
-                        </select>
-                    </div>
-                    
-                    <button type="button" onclick="convertir()">
-                        🔄 Convertir
-                    </button>
-                </form>
-                
-                <div id="result" class="result">
-                    <h3>Resultado:</h3>
-                    <p id="conversionResult"></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- TODO LO QUE ESTABA ANTES DEL HEADER FALSO DEBE DESAPARECER -->
     
-    <script>
-        // Función para convertir divisas
-        function convertir() {
-            const amount = document.getElementById('amount').value;
-            const fromCurrency = document.getElementById('fromCurrency').value;
-            const toCurrency = document.getElementById('toCurrency').value;
-            
-            if (!amount) {
-                alert('Por favor ingresa una cantidad');
-                return;
-            }
-            
-            // Tasas de cambio aproximadas (en producción usarías una API real)
-            const rates = {
-                USD: 1,
-                EUR: 0.92,
-                GBP: 0.79,
-                JPY: 150.5,
-                MXN: 17.1
-            };
-            
-            // Convertir a USD primero (simplificado)
-            const usdAmount = amount / rates[fromCurrency];
-            const result = usdAmount * rates[toCurrency];
-            
-            document.getElementById('conversionResult').innerHTML = 
-                ${amount} ${fromCurrency} = ${result.toFixed(2)} ${toCurrency};
-            document.getElementById('result').classList.add('show');
-        }
-    </script>
+    <h1>Conversor de Divisas Inteligente</h1>
+    <!-- Aquí va el contenido real de tu página -->
+    
 </body>
 </html>
