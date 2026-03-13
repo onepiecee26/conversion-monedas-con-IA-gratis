@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Configuración de AdSense - Conversor de Divisas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1913399723778376" crossorigin="anonymous"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .step-card { transition: all 0.3s ease; }
+        .step-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .completed { background-color: #d4edda; border-color: #c3e6cb; }
+        .in-progress { background-color: #fff3cd; border-color: #ffeaa7; }
+        .pending { background-color: #f8f9fa; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">
+                <i class="fas fa-dollar-sign text-green-500 mr-2"></i>
+                Configuración de AdSense para Conversor de Divisas
+            </h1>
+            <p class="text-gray-600">Tu ID de Editor: <strong class="text-blue-600">ca-pub-1913399723778376</strong></p>
+            <p class="text-sm text-gray-500 mt-2">Sigue estos pasos para activar la monetización en tu conversor</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mb-8">
+            <div class="bg-gray-200 rounded-full h-2 mb-4">
+                <div id="progressBar" class="bg-green-500 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+            <p class="text-center text-sm text-gray-600">Progreso: <span id="progressText">0%</span></p>
+        </div>
+
+        <!-- Steps -->
+        <div class="space-y-4">
+            <!-- Step 1 -->
+            <div id="step1" class="step-card bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">1</div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Verificar tu cuenta de AdSense</h3>
+                            <p class="text-gray-600 text-sm">Asegúrate de que tu cuenta esté aprobada y activa</p>
+                        </div>
+                    </div>
+                    <button onclick="completeStep(1)" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors">
+                        <i class="fas fa-check mr-1"></i> Completado
+                    </button>
+                </div>
+                <div class="mt-4 p-3 bg-blue-50 rounded-md">
+                    <p class="text-sm text-blue-800">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Verifica en tu panel de AdSense que tu cuenta esté en buen estado y sin restricciones.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="step2" class="step-card bg-white rounded-lg shadow-md p-6 border-l-4 border-yellow-500">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">2</div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Crear Unidades de Anuncios</h3>
+                            <p class="text-gray-600 text-sm">Configura 5 tipos diferentes de anuncios para maximizar ingresos</p>
+                        </div>
+                    </div>
+                    <button onclick="toggleStep2Details()" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md transition-colors">
+                        <i class="fas fa-cog mr-1"></i> Configurar
+                    </button>
+                </div>
+                
+                <div id="step2Details" class="hidden mt-4">
+                    <div class="bg-yellow-50 p-4 rounded-md">
+                        <h4 class="font-semibold text-yellow-800 mb-3">Crear estos 5 tipos de anuncios:</h4>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700">1. Banner Superior (728×90)</h5>
+                                <p class="text-sm text-gray-600">Nombre sugerido: <code class="bg-gray-100 px-1 rounded">Conversor_Banner_Superior</code></p>
+                                <p class="text-sm text-gray-600">ID de anuncio: <strong class="text-green-600">1370663935</strong> (¡ya configurado!)</p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700">2. Banner Lateral (160×600)</h5>
+                                <p class="text-sm text-gray-600">Nombre sugerido: <code class="bg-gray-100 px-1 rounded">Conversor_Banner_Lateral</code></p>
+                                <p class="text-sm text-gray-600">ID de anuncio: <strong class="text-blue-600">Por configurar</strong></p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700">3. Anuncio Móvil (Responsive)</h5>
+                                <p class="text-sm text-gray-600">Nombre sugerido: <code class="bg-gray-100 px-1 rounded">Conversor_Mobile_Responsive</code></p>
+                                <p class="text-sm text-gray-600">ID de anuncio: <strong class="text-blue-600">Por configurar</strong></p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700">4. Anuncio Intersticial (Fluid)</h5>
+                                <p class="text-sm text-gray-600">Nombre sugerido: <code class="bg-gray-100 px-1 rounded">Conversor_Intersticial</code></p>
+                                <p class="text-sm text-gray-600">ID de anuncio: <strong class="text-blue-600">Por configurar</strong></p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700">5. Anuncio In-Feed</h5>
+                                <p class="text-sm text-gray-600">Nombre sugerido: <code class="bg-gray-100 px-1 rounded">Conversor_InFeed</code></p>
+                                <p class="text-sm text-gray-600">ID de anuncio: <strong class="text-blue-600">Por configurar</strong></p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-blue-100 rounded">
+                            <h5 class="font-semibold text-blue-800">Instrucciones para crear cada anuncio:</h5>
+                            <ol class="list-decimal ml-5 text-sm text-blue-700 space-y-1">
+                                <li>Ve a tu panel de AdSense</li>
+                                <li>Click en "Anuncios" → "Por anuncio"</li>
+                                <li>Click en "Crear anuncio"</li>
+                                <li>Selecciona el tipo y tamaño correspondiente</li>
+                                <li>Asigna el nombre sugerido</li>
+                                <li>Guarda y copia el ID del anuncio</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step3" class="step-card bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">3</div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Actualizar IDs de Anuncios</h3>
+                            <p class="text-gray-600 text-sm">Reemplaza los IDs temporales con los reales de tus anuncios</p>
+                        </div>
+                    </div>
+                    <button onclick="showAdReplacements()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition-colors">
+                        <i class="fas fa-exchange-alt mr-1"></i> Actualizar
+                    </button>
+                </div>
+                
+                <div id="step3Details" class="hidden mt-4">
+                    <div class="bg-green-50 p-4 rounded-md">
+                        <h4 class="font-semibold text-green-800 mb-3">Resumen de ubicaciones de anuncios:</h4>
+                        
+                        <div class="bg-white p-3 rounded border mb-3">
+                            <table class="w-full text-sm">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="text-left p-2">Ubicación</th>
+                                        <th class="text-left p-2">ID Actual</th>
+                                        <th class="text-left p-2">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-medium">Banner Superior</td>
+                                        <td class="p-2 text-green-600">1370663935</td>
+                                        <td class="p-2"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">✅ Configurado</span></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-medium">Banner Lateral</td>
+                                        <td class="p-2 text-gray-500">[Tu ID]</td>
+                                        <td class="p-2"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">⏳ Pendiente</span></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-medium">Anuncio Móvil</td>
+                                        <td class="p-2 text-gray-500">[Tu ID]</td>
+                                        <td class="p-2"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">⏳ Pendiente</span></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-2 font-medium">Intersticial</td>
+                                        <td class="p-2 text-gray-500">[Tu ID]</td>
+                                        <td class="p-2"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">⏳ Pendiente</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2 font-medium">In-Feed</td>
+                                        <td class="p-2 text-gray-500">[Tu ID]</td>
+                                        <td class="p-2"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">⏳ Pendiente</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="p-3 bg-blue-100 rounded">
+                            <h5 class="font-semibold text-blue-800">Para actualizar los IDs:</h5>
+                            <ol class="list-decimal ml-5 text-sm text-blue-700 space-y-1">
+                                <li>Abre el archivo <code class="bg-blue-200 px-1 rounded">index.html</code></li>
+                                <li>Busca los comentarios <code class="bg-blue-200 px-1 rounded"><!-- Banner Lateral --></code>, etc.</li>
+                                <li>Reemplaza los IDs temporales con tus IDs reales</li>
+                                <li>Guarda el archivo</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="step4" class="step-card bg-white rounded-lg shadow-md p-6 border-l-4 border-purple-500">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">4</div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Probar y Verificar</h3>
+                            <p class="text-gray-600 text-sm">Verifica que los anuncios se muestren correctamente</p>
+                        </div>
+                    </div>
+                    <button onclick="testAds()" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-md transition-colors">
+                        <i class="fas fa-play mr-1"></i> Probar
+                    </button>
+                </div>
+                
+                <div id="step4Details" class="hidden mt-4">
+                    <div class="bg-purple-50 p-4 rounded-md">
+                        <h4 class="font-semibold text-purple-800 mb-3">Verificación de anuncios:</h4>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700">1. Prueba en diferentes dispositivos:</h5>
+                                <ul class="text-sm text-gray-600 ml-5 list-disc">
+                                    <li>Escritorio (1920px+)</li>
+                                    <li>Tablet (768px)</li>
+                                    <li>Móvil (375px)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700">2. Verifica la consola del navegador:</h5>
+                                <p class="text-sm text-gray-600">Busca errores de AdSense en F12 → Consola</p>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700">3. Comprueba la visibilidad:</h5>
+                                <p class="text-sm text-gray-600">Los anuncios deben cargarse en menos de 5 segundos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-green-100 rounded">
+                            <h5 class="font-semibold text-green-800">Consejos de optimización:</h5>
+                            <ul class="text-sm text-green-700 space-y-1">
+                                <li>✅ Usa anuncios responsivos para mejor cobertura</li>
+                                <li>✅ Coloca anuncios arriba del fold para mayor CTR</li>
+                                <li>✅ Evita demasiados anuncios que afecten la UX</li>
+                                <li>✅ Monitorea el rendimiento mensualmente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div id="step5" class="step-card bg-white rounded-lg shadow-md p-6 border-l-4 border-red-500">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">5</div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Monetización Avanzada</h3>
+                            <p class="text-gray-600 text-sm">Optimiza tus ingresos con estrategias avanzadas</p>
+                        </div>
+                    </div>
+                    <button onclick="showAdvancedTips()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-colors">
+                        <i class="fas fa-rocket mr-1"></i> Optimizar
+                    </button>
+                </div>
+                
+                <div id="step5Details" class="hidden mt-4">
+                    <div class="bg-red-50 p-4 rounded-md">
+                        <h4 class="font-semibold text-red-800 mb-3">Estrategias de maximización de ingresos:</h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700 mb-2">📊 Análisis de Datos</h5>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Monitorea el CTR semanalmente</li>
+                                    <li>• A/B test de posiciones de anuncios</li>
+                                    <li>• Analiza el rendimiento por país</li>
+                                    <li>• Identifica tus mejores páginas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700 mb-2">🎯 Optimización</h5>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Prueba diferentes formatos de anuncios</li>
+                                    <li>• Optimiza para móvil (70% del tráfico)</li>
+                                    <li>• Implementa anuncios nativos</li>
+                                    <li>• Usa anuncios de video cuando sea posible</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700 mb-2">💰 Ingresos Extras</h5>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Agrega Amazon Afiliados</li>
+                                    <li>• Ofrece suscripciones premium</li>
+                                    <li>• Implementa donaciones</li>
+                                    <li>• Vende espacio publicitario directo</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-3 rounded border">
+                                <h5 class="font-semibold text-gray-700 mb-2">⚠️ Mejores Prácticas</h5>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• No más de 5 anuncios por página</li>
+                                    <li>• Respeta las políticas de AdSense</li>
+                                    <li>• Mantén el contenido de calidad</li>
+                                    <li>• Solicita feedback de usuarios</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="mt-8 bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                Acciones Rápidas
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <button onclick="openAdSensePanel()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors text-sm">
+                    <i class="fas fa-external-link-alt mr-1"></i> Panel AdSense
+                </button>
+                <button onclick="testCurrentPage()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition-colors text-sm">
+                    <i class="fas fa-eye mr-1"></i> Probar Página
+                </button>
+                <button onclick="generateReport()" class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-md transition-colors text-sm">
+                    <i class="fas fa-chart-line mr-1"></i> Generar Reporte
+                </button>
+                <button onclick="contactSupport()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-colors text-sm">
+                    <i class="fas fa-question-circle mr-1"></i> Soporte
+                </button>
+            </div>
+        </div>
+
+        <!-- Status Footer -->
+        <div class="mt-8 text-center text-gray-500 text-sm">
+            <p>Estado de configuración: <span id="configStatus" class="font-semibold">En progreso</span></p>
+            <p class="mt-2">¿Necesitas ayuda? <a href="mailto:soporte@tudominio.com" class="text-blue-500 hover:underline">Contacta al soporte</a></p>
+        </div>
+    </div>
+
+    <script>
+        let completedSteps = new Set();
+        
+        function updateProgress() {
+            const progress = (completedSteps.size / 5) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressText').textContent = Math.round(progress) + '%';
+            document.getElementById('configStatus').textContent = progress === 100 ? 'Completo' : 'En progreso';
+        }
+        
+        function completeStep(step) {
+            completedSteps.add(step);
+            document.getElementById(`step${step}`).classList.add('completed');
+            updateProgress();
+            
+            // Auto-expand next step
+            if (step < 5) {
+                setTimeout(() => {
+                    const nextStep = step + 1;
+                    const nextDetails = document.getElementById(`step${nextStep}Details`);
+                    if (nextDetails) {
+                        nextDetails.classList.remove('hidden');
+                        document.getElementById(`step${nextStep}`).classList.add('in-progress');
+                    }
+                }, 500);
+            }
+        }
+        
+        function toggleStep2Details() {
+            const details = document.getElementById('step2Details');
+            details.classList.toggle('hidden');
+        }
+        
+        function showAdReplacements() {
+            const details = document.getElementById('step3Details');
+            details.classList.toggle('hidden');
+        }
+        
+        function testAds() {
+            const details = document.getElementById('step4Details');
+            details.classList.toggle('hidden');
+        }
+        
+        function showAdvancedTips() {
+            const details = document.getElementById('step5Details');
+            details.classList.toggle('hidden');
+        }
+        
+        function openAdSensePanel() {
+            window.open('https://www.google.com/adsense', '_blank');
+        }
+        
+        function testCurrentPage() {
+            alert('Para probar la página:\n\n1. Abre index.html en tu navegador\n2. Verifica que los anuncios carguen\n3. Usa F12 para ver la consola\n4. Prueba en móvil y desktop');
+        }
+        
+        function generateReport() {
+            alert('Reporte de configuración:\n\n✅ Script de AdSense: Instalado\n✅ ID de Editor: ca-pub-1913399723778376\n✅ Banner Superior: ID 1370663935\n⏳ Otros anuncios: Pendientes de configurar\n\nPróximos pasos:\n1. Crear unidades en AdSense\n2. Actualizar IDs en el código\n3. Probar visualización');
+        }
+        
+        function contactSupport() {
+            alert('Para soporte con AdSense:\n\n📧 Email: adsense-support@google.com\n📞 Teléfono: +1-650-253-0000\n💬 Chat: Disponible en el panel de AdSense\n\nRecursos útiles:\n• Centro de ayuda de AdSense\n• Foros de la comunidad\n• Documentación oficial');
+        }
+        
+        // Initialize
+        updateProgress();
+        
+        // Auto-complete step 1 if AdSense script is loaded
+        if (typeof adsbygoogle !== 'undefined') {
+            setTimeout(() => completeStep(1), 1000);
+        }
+    </script>
+</body>
+</html>
